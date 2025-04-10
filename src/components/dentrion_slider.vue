@@ -165,7 +165,7 @@ export default {
 /* 전체 컨테이너 스타일 */
 .container {
   height: 100%;
-  width: 100vw;
+
   background-color: #fcf7f4;
   display: flex;
   flex-direction: column;
