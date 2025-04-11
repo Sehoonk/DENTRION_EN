@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import AOS from "aos";
 import "aos/dist/aos.css"; // AOS의 기본 CSS 파일 가져오기
-import "./assets/styles.css";
+
 const app = createApp(App);
 
 // AOS 초기화

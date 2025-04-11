@@ -49,7 +49,7 @@ export default {};
   text-align: start;
   color: #bee0c7;
   width: 100%;
-  font-family: "Wanted Sans", sans-serif;
+
   font-weight: 700;
 }
 

@@ -188,7 +188,7 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 0 20px;
-  font-family: "Wanted Sans", sans-serif;
+
   font-weight: 700;
   color: #b0b0b0;
   cursor: pointer;
@@ -305,7 +305,6 @@ export default {
   justify-content: center;
   font-size: 32px;
   font-weight: 700;
-  font-family: "Wanted Sans", sans-serif;
   line-height: 1.5;
 }
 

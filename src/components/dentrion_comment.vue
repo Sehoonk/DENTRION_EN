@@ -96,7 +96,7 @@ export default {};
   gap: 20px;
   padding: 20px;
   font-size: 18px;
-  font-family: "Wanted Sans", sans-serif;
+
   font-weight: 500;
   color: #266533;
 }
