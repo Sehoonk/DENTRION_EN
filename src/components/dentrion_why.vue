@@ -212,7 +212,7 @@ h1 {
 .container {
   height: 100%;
   padding-top: 80px;
-  background-color: #e5f3e9;
+  background-color: #fcf7f4;
 }
 .header_title > h1 {
   font-weight: 900;
@@ -228,7 +228,7 @@ h1 {
 .solution_container {
   padding: 80px 20px;
   margin-top: 50px;
-  background-color: #bee0c7;
+  background-color: #e5f3e9;
 }
 
 .sub_title {

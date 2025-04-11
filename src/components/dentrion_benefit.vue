@@ -53,7 +53,7 @@
     </div>
 
     <div class="benefit_footer">
-      <div class="sub_title">Send Us Your Cases</div>
+      <div class="sub_title">Send Us Your Case</div>
       <div class="delivery_logo">
         <img
           src="../assets/icon/delivery_01.png"
