@@ -9,11 +9,11 @@
   <div class="intro_container">
     <div class="font_container">
       <div class="header_title">
-        <h1 data-aos="fade-up" data-aos-duration="200">Reduce Chair Time</h1>
-        <h1 data-aos="fade-up" data-aos-duration="400">
+        <h1 data-aos="fade-up" data-aos-duration="400">Reduce Chair Time</h1>
+        <h1 data-aos="fade-up" data-aos-duration="600">
           with Digital Dental Lab
         </h1>
-        <h1 data-aos="fade-up" data-aos-duration="600">DENTRION</h1>
+        <h1 data-aos="fade-up" data-aos-duration="800">DENTRION</h1>
       </div>
       <div class="header_sub">
         <p>Experience high-quality dental</p>
@@ -62,13 +62,19 @@ export default {};
   text-align: center;
   color: #bee0c7;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.header_title > h1 {
+  font-weight: 900;
+  margin: 0;
 }
 
-/* 서브 텍스트 스타일 - 약 40px */
 .header_sub {
   text-align: center;
   color: #bee0c7;
-  line-height: 1.8;
+  line-height: 1.5;
   font-size: 18px;
 }
 </style>

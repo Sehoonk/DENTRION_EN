@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer_container">
-      <img src="../assets/image/dentrion_logo_sm.png" alt="" />
+      <img width="150" src="../assets/image/dentrion_logo_navy.png" alt="" />
 
       <div class="toggle_title" @click="isOpen = !isOpen">
         <p>BUSINESS INFORMATION</p>
@@ -94,7 +94,7 @@ export default {
 }
 
 .privacy_policy {
-  font-weight: 900;
+  font-weight: 700;
   color: #555;
   font-size: 12px;
   margin-top: 20px;

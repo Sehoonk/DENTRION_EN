@@ -1,15 +1,15 @@
 <template>
   <div class="rate_container">
     <div class="header_title">
-      <h1 data-aos="fade-up" data-aos-duration="200">DENTRION is trusted</h1>
-      <h1 data-aos="fade-up" data-aos-duration="400">
+      <h1 data-aos="fade-up" data-aos-duration="400">DENTRION is trusted</h1>
+      <h1 data-aos="fade-up" data-aos-duration="600">
         by dental professionals.
       </h1>
     </div>
     <div class="rate_content_container">
       <div class="rate_contents">
         <div class="content_circle">Client Retention Rate</div>
-        <p><span>95.6</span>%</p>
+        <p style="margin-left: 5px"><span>95.6</span>%</p>
       </div>
       <div class="rate_contents">
         <div class="content_circle">Cases Completed</div>
@@ -17,7 +17,7 @@
       </div>
       <div class="rate_contents">
         <div class="content_circle">Growth Rate</div>
-        <p><span>103</span>%</p>
+        <p style="margin-left: 8px"><span>103</span>%</p>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@ export default {};
 /* 전체 컨테이너 스타일 */
 .rate_container {
   padding: 100px 20px;
-  background-image: url("../assets/icon/back_01.jpg");
+  background-image: url("../assets/image/그래프_01.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -70,17 +70,17 @@ export default {};
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 .rate_contents > p {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 900;
 }
 
 .rate_contents > p > span {
-  font-size: 58px;
+  font-size: 52px;
   font-weight: 900;
 }
 </style>

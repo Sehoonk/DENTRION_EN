@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <div class="benefit_header">
-      <p class="sub_title" style="font-family: 'Roboto-Italic'">Benefits</p>
+      <p
+        class="sub_title"
+        style="font-family: 'Roboto-Italic'; letter-spacing: 0.3px"
+      >
+        Benefits
+      </p>
       <div class="header_title">
         <p>Dentrion'<span style="font-size: 40px">s</span></p>
         <p>Special Offer</p>
@@ -12,7 +17,7 @@
       </div>
     </div>
     <div class="benefit_container">
-      <div class="benefit_contents" data-aos="fade-up" data-aos-duration="400">
+      <div class="benefit_contents" data-aos="fade-up" data-aos-duration="600">
         <div class="coupon_container">
           <img
             src="../assets/icon/coupon_01.png"
@@ -39,7 +44,7 @@
           <div class="coupon_content">
             <div class="coupon_header">
               <p class="benefit_title">7-DAY</p>
-              <p class="benefit_subtext">Fast shipping / business days</p>
+              <p class="benefit_subtext">Fast shipping / In-Lab working time</p>
             </div>
             <div class="benefit_logo">DENTRION</div>
           </div>
@@ -92,13 +97,13 @@ export default {};
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   gap: 10px;
 }
 .sub_title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #339551;
-  letter-spacing: 1.5px;
 }
 .header_title {
   text-align: center;
@@ -106,31 +111,33 @@ export default {};
   font-weight: 900;
 }
 .sub_text {
-  letter-spacing: 1.5px;
   position: relative;
   white-space: nowrap;
   width: 100%;
-  display: flex;
-}
-.benefit_subtext {
-  color: #696866;
 }
 .sub_text > p {
   position: absolute;
-  font-size: 18px;
-  font-weight: 700;
   width: 100%;
+  text-align: center;
   top: 0;
   z-index: 99;
+  font-size: 24px;
+  font-weight: 700;
 }
 .sub_text > span {
   position: absolute;
-  width: 49%;
+  width: 40%;
   height: 15px;
   background-color: #bee0c7;
-  bottom: -26px;
-  left: 29%;
+  top: 18px;
+  left: 28%;
   z-index: 1;
+}
+.benefit_subtext {
+  margin-top: -5px;
+  color: #696866;
+  font-weight: 400;
+  font-size: 14px;
 }
 .benefit_container {
   display: flex;
@@ -139,6 +146,7 @@ export default {};
   align-items: center;
   width: 100%;
   gap: 20px;
+  margin-top: 40px;
 }
 .benefit_contents {
   display: flex;
@@ -169,7 +177,7 @@ export default {};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 5px;
   box-sizing: border-box;
 }
 
@@ -181,8 +189,8 @@ export default {};
 .benefit_logo {
   text-align: end;
   padding-right: 20px;
-  color: #696866;
-  font-weight: 900;
+  color: #868585;
+  font-weight: 700;
 }
 .benefit_title {
   font-size: 50px;
@@ -194,7 +202,7 @@ export default {};
   align-items: center;
   width: 100%;
   padding: 30px 0;
-  margin-top: 10px;
+  margin-top: 40px;
   gap: 20px;
   background-color: #bee0c7;
 }

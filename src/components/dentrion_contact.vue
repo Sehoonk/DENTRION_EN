@@ -8,28 +8,42 @@
         <div class="input_group">
           <div class="field_wrapper" style="width: 40%">
             <label class="field_label">First Name</label>
-            <input type="text" class="input_field" style="width: 100%" />
+            <input
+              type="text"
+              class="input_field"
+              style="width: 100%"
+              v-model.trim="form.firstName"
+            />
           </div>
           <div class="field_wrapper" style="width: 40%">
             <label class="field_label">Last Name</label>
-            <input type="text" class="input_field" style="width: 100%" />
+            <input
+              type="text"
+              class="input_field"
+              style="width: 100%"
+              v-model.trim="form.lastName"
+            />
           </div>
         </div>
 
         <div class="field_wrapper">
           <label class="field_label">Email Address</label>
-          <input type="email" class="input_field" />
+          <input type="email" class="input_field" v-model.trim="form.email" />
         </div>
 
         <div class="field_wrapper">
           <label class="field_label">Name of Practice</label>
-          <input type="text" class="input_field" />
+          <input
+            type="text"
+            class="input_field"
+            v-model.trim="form.practiceName"
+          />
         </div>
 
         <div class="field_wrapper">
           <label class="field_label">Select a Country</label>
-          <select class="select_field">
-            <option value="" selected></option>
+          <select class="select_field" v-model="form.country">
+            <option value="" selected>(Select a Country)</option>
             <option
               v-for="country in countries"
               :key="country"
@@ -42,8 +56,8 @@
 
         <div class="field_wrapper">
           <label class="field_label">Select Intraoral Scanner</label>
-          <select class="select_field">
-            <option value="" selected></option>
+          <select class="select_field" v-model="form.scanner">
+            <option value="" selected>(Select Intraoral Scanner)</option>
             <option v-for="scanner in scanners" :key="scanner" :value="scanner">
               {{ scanner }}
             </option>
@@ -52,18 +66,24 @@
 
         <div class="field_wrapper">
           <label class="field_label">Message</label>
-          <textarea class="textarea_field"></textarea>
+          <textarea
+            class="textarea_field"
+            v-model.trim="form.message"
+          ></textarea>
         </div>
 
-        <button type="submit" class="submit_button">Send</button>
+        <button type="submit" class="submit_button" :disabled="!isFormComplete">
+          Send
+        </button>
       </form>
       <SendSuccess v-if="showSuccessModal" @close="closeModal" />
     </div>
   </div>
 </template>
+
 <script>
 import data from "@/assets/data/data.json";
-import SendSuccess from "./send_success.vue"; // send_success.vue 파일 경로에 맞게 수정
+import SendSuccess from "./send_success.vue";
 
 export default {
   components: {
@@ -82,18 +102,27 @@ export default {
         scanner: "",
         message: "",
       },
-      showSuccessModal: false, // 모달 표시 상태
+      showSuccessModal: false,
     };
+  },
+  computed: {
+    isFormComplete() {
+      return (
+        this.form.firstName &&
+        this.form.lastName &&
+        this.form.email &&
+        this.form.practiceName &&
+        this.form.country &&
+        this.form.scanner &&
+        this.form.message
+      );
+    },
   },
   methods: {
     handleSubmit() {
-      // 여기서 실제 폼 데이터를 서버로 전송하는 로직을 추가할 수 있음
+      if (!this.isFormComplete) return;
       console.log("Form submitted:", this.form);
-
-      // 폼 제출 성공 시 모달 표시
       this.showSuccessModal = true;
-
-      // 폼 초기화 (선택 사항)
       this.resetForm();
     },
     resetForm() {
@@ -108,21 +137,18 @@ export default {
       };
     },
     closeModal() {
-      this.showSuccessModal = false; // 모달 닫기
+      this.showSuccessModal = false;
     },
   },
 };
 </script>
 
 <style scoped>
-@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/static/complete/WantedSans.min.css");
-
 .container {
   display: flex;
   flex-direction: column;
   padding: 100px 10px 20px 10px;
   background-color: #e5f3e9;
-  font-family: "Wanted Sans", sans-serif;
 }
 
 .form_container {
@@ -133,56 +159,56 @@ export default {
 }
 
 .form_subtitle {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #339551;
-  letter-spacing: 1px;
+  letter-spacing: 0.3px;
   font-family: "Roboto-Italic", sans-serif;
   text-align: center;
 }
 
 .form_title {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 900;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   padding: 0 20px;
 }
 
 .field_wrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .field_label {
-  font-size: 14px;
-  font-weight: 900;
+  font-size: 16px;
+  font-weight: 700;
   color: #374151;
 }
 
 .input_group {
   display: flex;
   justify-content: space-between;
-  padding-right: 20px;
+  padding-right: 28px;
 }
 
 .input_field,
 .select_field,
 .textarea_field {
   background-color: #f1f1f1;
-  padding: 10px;
+  padding: 14px;
   border-radius: 4px;
   border: none;
-  font-family: "Wanted Sans", sans-serif;
 }
+
 .input_field:focus,
 .select_field:focus,
 .textarea_field:focus {
@@ -202,7 +228,6 @@ export default {
   background-size: 30px;
 }
 
-/* Button Styles */
 .submit_button {
   background-color: #339551;
   color: white;
@@ -214,5 +239,13 @@ export default {
   margin: 0 auto;
   margin-top: 20px;
   font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit_button:disabled {
+  background-color: #a3c8af;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 </style>

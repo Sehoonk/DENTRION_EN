@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div data-aos="fade-up" data-aos-duration="400" class="header_title">
-      <h1>Why Choose</h1>
-      <h1>DENTRION?</h1>
+    <div class="header_title">
+      <h1 data-aos="fade-up" data-aos-duration="800">Why Choose</h1>
+      <h1 data-aos="fade-up" data-aos-duration="1000">DENTRION?</h1>
     </div>
     <!-- quality -->
     <div class="quality_container">
@@ -83,7 +83,7 @@
             <div
               class="average_circle"
               data-aos="fade-left"
-              data-aos-duration="200"
+              data-aos-duration="600"
             >
               <p>Average</p>
               <p><span style="font-size: 28px; font-weight: 900">49</span>%</p>
@@ -97,22 +97,17 @@
     <!-- Solution -->
     <div class="solution_container">
       <div class="sub_title" style="text-align: end">Solutions</div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="300"
-        class="main_text"
-        style="text-align: end"
-      >
-        <p>Simple Ordering!</p>
-        <p>Hassle-Free Payment!</p>
-        <p>Comprehensive</p>
-        <p>Data Tracking!</p>
+      <div class="main_text" style="text-align: end">
+        <p data-aos="fade-in" data-aos-duration="400">Simple Ordering!</p>
+        <p data-aos="fade-in" data-aos-duration="600">Hassle-Free Payment!</p>
+        <p data-aos="fade-in" data-aos-duration="800">Comprehensive</p>
+        <p data-aos="fade-in" data-aos-duration="1000">Data Tracking!</p>
       </div>
       <div class="solutions_items_container" style="z-index: 3">
         <div class="solutions_movie">
           <div class="backgound_video">
             <video autoplay muted loop playsinline>
-              <source src="../assets/video/01.mp4" type="video/mp4" />
+              <source src="../assets/video/01_주문.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -124,7 +119,10 @@
 
         <div class="solutions_movie">
           <div class="backgound_video">
-            <img src="../assets/image/17.jpg" alt="" />
+            <video autoplay muted loop playsinline>
+              <source src="../assets/video/02_배송.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div class="sub_text" style="text-align: center">
             <p>Track the status of your prosthetic</p>
@@ -134,7 +132,10 @@
 
         <div class="solutions_movie">
           <div class="backgound_video">
-            <img src="../assets/image/17.jpg" alt="" />
+            <video autoplay muted loop playsinline>
+              <source src="../assets/video/03_카드.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div class="sub_text" style="text-align: center">
             <p>Received our services?</p>
@@ -210,22 +211,22 @@ h1 {
 }
 .container {
   height: 100%;
-  padding-top: 60px;
+  padding-top: 80px;
   background-color: #e5f3e9;
 }
 .header_title > h1 {
   font-weight: 900;
-  line-height: 1.5;
-  font-size: 40px;
+  line-height: 1.2;
+  font-size: 36px;
   padding: 0 20px;
 }
 .quality_container {
   padding: 0 20px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .solution_container {
-  padding: 50px;
+  padding: 80px 20px;
   margin-top: 50px;
   background-color: #bee0c7;
 }
@@ -243,7 +244,7 @@ h1 {
 .sub_text {
   font-size: 18px;
   color: #696866;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .carousel_container {
@@ -268,16 +269,20 @@ h1 {
 
 .carousel_item {
   flex: 0 0 100%;
-  height: 100%;
+  height: 80%;
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
+  position: relative;
+  border-radius: 8px;
 }
 
 .carousel_image {
+  height: 100%;
   max-width: 100%;
-  max-height: 80%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 .pagination {

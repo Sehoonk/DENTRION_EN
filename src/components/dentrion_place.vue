@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="img_container">
-      <img width="100%" src="../assets/image/22.jpg" alt="" />
+      <img width="100%" src="../assets/image/기공소_01.jpg" alt="" />
     </div>
     <div class="img_container">
-      <img width="100%" src="../assets/image/22.jpg" alt="" />
+      <img width="100%" src="../assets/image/기공소_02.jpg" alt="" />
     </div>
     <div class="img_container">
-      <img width="100%" src="../assets/image/22.jpg" alt="" />
+      <img width="100%" src="../assets/image/기공소_03.jpg" alt="" />
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {};
   align-items: center;
   justify-content: space-between;
   padding: 80px 10px;
-  gap: 5px;
+  gap: 3px;
   box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
   overflow-x: hidden; /* 가로 스크롤 방지 */
 }
@@ -38,7 +38,6 @@ export default {};
   height: 200px;
   display: flex;
   justify-content: center;
-  gap: 5px;
   display: inline-block;
 }
 

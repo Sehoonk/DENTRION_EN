@@ -51,11 +51,11 @@
       <div class="image_wrapper">
         <img src="../assets/image/14.jpg" alt="" />
         <div class="overlay">
-          <p data-aos="fade-up" data-aos-duration="100">DENTRION cuts both</p>
-          <p data-aos="fade-up" data-aos-duration="200">
+          <p data-aos="fade-up" data-aos-duration="400">DENTRION cuts both</p>
+          <p data-aos="fade-up" data-aos-duration="600">
             chair time and stress
           </p>
-          <p data-aos="fade-up" data-aos-duration="300">
+          <p data-aos="fade-up" data-aos-duration="800">
             by <span style="color: #eaef00">50%</span>
           </p>
         </div>
@@ -63,6 +63,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
@@ -90,34 +91,34 @@ export default {
           require("../assets/image/04.jpg"),
         ],
         [
-          require("../assets/image/05_CNC.png"),
-          require("../assets/image/06.png"),
-          require("../assets/image/07.png"),
+          require("../assets/image/디지털_예시_01.png"),
+          require("../assets/image/디지털_예시_02.png"),
+          require("../assets/image/디지털_예시_03.png"),
         ],
         [
-          require("../assets/image/08.png"),
-          require("../assets/image/09_inLab_MCX5.png"),
-          require("../assets/image/10_trios5.png"),
+          require("../assets/image/11.jpg"),
+          require("../assets/image/12.jpg"),
+          require("../assets/image/13.jpg"),
         ],
       ],
-      activeSlider: null,
+      activeSlider: 0, // First slider open by default
       currentSlide: 0,
-      touchStartX: 0, // 스와이프 시작 위치
-      touchOffset: 0, // 실시간 이동 거리
+      touchStartX: 0,
+      touchOffset: 0,
     };
   },
   methods: {
     toggleSlider(index) {
       if (this.activeSlider === index) {
-        this.activeSlider = null;
+        this.activeSlider = null; // Close if clicking the open slider
       } else {
-        this.activeSlider = index;
-        this.currentSlide = 0;
+        this.activeSlider = index; // Open the clicked slider
+        this.currentSlide = 0; // Reset to first slide
       }
     },
     goToSlide(index) {
       this.currentSlide = index;
-      this.touchOffset = 0; // 페이징 클릭 시 오프셋 초기화
+      this.touchOffset = 0;
     },
     handleSwipe(event) {
       this.touchStartX = event.touches[0].clientX;
@@ -125,7 +126,6 @@ export default {
       const touchMoveHandler = (moveEvent) => {
         const touchMoveX = moveEvent.touches[0].clientX;
         this.touchOffset = touchMoveX - this.touchStartX;
-        // 실시간으로 슬라이드 위치 업데이트 (부드러운 이동)
         const translateX = `translateX(calc(-${this.currentSlide * 100}% + ${
           this.touchOffset
         }px))`;
@@ -134,18 +134,17 @@ export default {
 
       const touchEndHandler = () => {
         const swipeDistance = this.touchOffset;
-        const threshold = 50; // 스와이프 인식 최소 거리
+        const threshold = 50;
 
         if (swipeDistance > threshold && this.currentSlide > 0) {
-          this.currentSlide--; // 오른쪽으로 스와이프 (이전 슬라이드)
+          this.currentSlide--;
         } else if (
           swipeDistance < -threshold &&
           this.currentSlide < this.sliderImages[this.activeSlider].length - 1
         ) {
-          this.currentSlide++; // 왼쪽으로 스와이프 (다음 슬라이드)
+          this.currentSlide++;
         }
 
-        // 슬라이드 위치 초기화
         this.touchOffset = 0;
         document.querySelector(
           ".carousel_inner"
@@ -161,11 +160,11 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 /* 전체 컨테이너 스타일 */
 .container {
   height: 100%;
-
   background-color: #fcf7f4;
   display: flex;
   flex-direction: column;
@@ -183,20 +182,22 @@ export default {
 }
 
 .slider_box {
-  background-color: #bee0c7;
+  background-color: #eaeaea;
   height: 80px;
   border-radius: 13px;
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
+  padding: 0 20px;
   font-family: "Wanted Sans", sans-serif;
   font-weight: 700;
-  color: #266533;
+  color: #b0b0b0;
   cursor: pointer;
   transition: height 0.3s ease;
 }
 
 .slider_box.expanded {
+  background-color: #bee0c7;
+  color: #266533;
   height: 380px;
 }
 
@@ -224,26 +225,30 @@ export default {
 .carousel_inner {
   display: flex;
   height: 100%;
-  transition: transform 0.3s ease; /* 부드러운 전환 */
+  transition: transform 0.3s ease;
 }
 
 .carousel_item {
   flex: 0 0 100%;
-  height: 100%;
+  height: calc(100% - 20px);
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
   position: relative;
+  border-radius: 8px;
 }
 
 .carousel_image {
+  height: 100%;
   max-width: 100%;
-  max-height: calc(100% - 10px);
-  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .pagination {
   background-color: white;
+  opacity: 0.6;
   padding: 5px 10px;
   border-radius: 10px;
   position: absolute;
@@ -293,12 +298,12 @@ export default {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  color: #bee0c7;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 700;
   font-family: "Wanted Sans", sans-serif;
   line-height: 1.5;

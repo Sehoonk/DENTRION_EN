@@ -4,7 +4,7 @@
       <div
         class="commnet_box green_box"
         data-aos="fade-right"
-        data-aos-duration="400"
+        data-aos-duration="600"
       >
         <div>
           Dentrion's technicians combine digital expertise with exceptional
@@ -19,7 +19,7 @@
       <div
         class="commnet_box grey_box"
         data-aos="fade-left"
-        data-aos-duration="400"
+        data-aos-duration="600"
       >
         <div>
           The tooth designs are outstanding and color matching is spot-on,
@@ -33,7 +33,7 @@
       <div
         class="commnet_box green_box"
         data-aos="fade-right"
-        data-aos-duration="400"
+        data-aos-duration="600"
       >
         <div>
           The jigs and custom abutments provide excellent retention. Their
@@ -47,7 +47,7 @@
       <div
         class="commnet_box grey_box"
         data-aos="fade-left"
-        data-aos-duration="400"
+        data-aos-duration="600"
       >
         <div>
           They quickly implement feedback with precise understanding of our
